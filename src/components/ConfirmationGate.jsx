@@ -18,11 +18,17 @@ export function ConfirmationGate({ pending, onConfirm, onCancel }) {
       <p>
         Command: <code>{pending.command}</code>
       </p>
-      <p>Reason: {pending.reason}</p>
+      <p id="confirmation-reason">Reason: {pending.reason}</p>
       <p>
         Type <strong>{pending.confirmationPhrase}</strong> to proceed.
       </p>
-      <input value={typedValue} onChange={(event) => setTypedValue(event.target.value)} />
+      <label htmlFor="confirmation-input">Confirmation phrase</label>
+      <input
+        id="confirmation-input"
+        aria-describedby="confirmation-reason"
+        value={typedValue}
+        onChange={(event) => setTypedValue(event.target.value)}
+      />
       <div className="row">
         <button type="button" onClick={confirmAction}>
           Confirm

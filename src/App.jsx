@@ -294,7 +294,7 @@ function App() {
         pending={pendingConfirmation}
         onConfirm={(typedValue) => {
           const expected = pendingConfirmation?.confirmationPhrase
-          finishConfirmation(typedValue.trim().toUpperCase() === expected)
+          finishConfirmation(typedValue.trim() === expected)
         }}
         onCancel={() => finishConfirmation(false)}
       />

@@ -1,10 +1,15 @@
-const DEFAULT_REPO_ROOT = '/tmp/workspace/AbhayRathi/voiceops-demo-repo'
+const DEFAULT_REPO_ROOT = '/workspace/repo'
+const WINDOWS_ABSOLUTE_PATH = /^[a-zA-Z]:\\/
+
+function isAbsolutePath(pathValue) {
+  return /^\//.test(pathValue) || WINDOWS_ABSOLUTE_PATH.test(pathValue)
+}
 
 export function resolveRepoRoot() {
   const fromEnv = import.meta.env.VITE_REPO_ROOT
   const candidate = fromEnv || DEFAULT_REPO_ROOT
 
-  if (!candidate || !candidate.startsWith('/')) {
+  if (!candidate || !isAbsolutePath(candidate)) {
     return null
   }
 
@@ -21,7 +26,8 @@ export function validateCommandRepoScope(command, repoRoot) {
 
   const segments = command.split(/\s+/)
   const pathTokens = segments.filter(
-    (segment) => segment.startsWith('/') || segment.startsWith('./') || segment.startsWith('../'),
+    (segment) =>
+      segment.startsWith('/') || segment.startsWith('./') || segment.startsWith('../') || WINDOWS_ABSOLUTE_PATH.test(segment),
   )
 
   for (const token of pathTokens) {
@@ -32,7 +38,7 @@ export function validateCommandRepoScope(command, repoRoot) {
       }
     }
 
-    if (token.startsWith('/') && !token.startsWith(repoRoot)) {
+    if ((token.startsWith('/') || WINDOWS_ABSOLUTE_PATH.test(token)) && !token.startsWith(repoRoot)) {
       return {
         allowed: false,
         reason: 'Absolute command path is outside the repository root.',
