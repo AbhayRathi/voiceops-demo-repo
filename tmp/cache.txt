@@ -1,0 +1,3 @@
+# Temporary cache — safe to delete
+demo-cache-entry-1=value1
+demo-cache-entry-2=value2

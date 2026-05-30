@@ -1,0 +1,11 @@
+{
+  "name": "voiceops-demo-repo",
+  "version": "1.0.0",
+  "description": "Intentionally broken demo repo — target for VoiceOps Guard scanning.",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/auth.test.js tests/billing.test.js",
+    "lint": "node scripts/lint.js",
+    "audit:mock": "node scripts/audit-mock.js"
+  }
+}
