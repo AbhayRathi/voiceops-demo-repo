@@ -1,0 +1,6 @@
+2024-03-01T08:00:00Z [INFO]  Application started
+2024-03-01T08:00:01Z [INFO]  Loaded config: env=development
+2024-03-01T08:05:33Z [WARN]  API key detected in config (demo only — not a real secret)
+2024-03-01T08:10:12Z [INFO]  User login: user_id=1
+2024-03-01T08:11:00Z [ERROR] Billing calculation error: undefined price for item_id=99
+2024-03-01T08:15:44Z [INFO]  Graceful shutdown initiated

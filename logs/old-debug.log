@@ -1,0 +1,7 @@
+2024-01-15T09:12:03Z [DEBUG] Server started on port 3000
+2024-01-15T09:12:04Z [DEBUG] Database connection established
+2024-01-15T09:15:22Z [WARN]  Slow query detected: SELECT * FROM users (342ms)
+2024-01-15T09:18:45Z [ERROR] Auth token validation failed for user_id=42
+2024-01-15T09:20:01Z [DEBUG] Cache miss for key: user:42:profile
+2024-01-15T09:45:00Z [DEBUG] Scheduled job: cleanup-temp-files started
+2024-01-15T09:45:01Z [DEBUG] Scheduled job: cleanup-temp-files completed (0 files removed)
