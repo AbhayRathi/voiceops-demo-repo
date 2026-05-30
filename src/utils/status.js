@@ -1,0 +1,15 @@
+export const WORKFLOW_STATES = [
+  'Idle',
+  'Listening',
+  'Transcribing',
+  'Transcribed',
+  'Planning',
+  'Classifying commands',
+  'Running checks',
+  'Scanning secrets',
+  'Generating report',
+  'Evaluating session',
+  'Adding guardrail',
+  'Complete',
+  'Error',
+]
