@@ -1,0 +1,4 @@
+[2024-01-15 08:00:01] DEBUG: App started
+[2024-01-15 08:00:02] DEBUG: DB connection established
+[2024-01-15 08:01:44] DEBUG: Token=sk_demo_FAKE_NOT_REAL_OLD — DEMO ONLY, NOT A REAL TOKEN
+[2024-01-15 08:02:10] ERROR: Auth failed for user admin
